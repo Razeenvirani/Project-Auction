@@ -10,8 +10,6 @@ pragma solidity >= 0.8.0;
     mapping(address => uint256) private bids;
     uint highestBindingBid;
     address[] private bidKeys;
-    //     address public secondHighestBidder;
-    // uint public secondHighestBid;
     
 
 
@@ -45,38 +43,15 @@ pragma solidity >= 0.8.0;
             bids[msg.sender] = msg.value;
             highestBindingBid = bids[highestBidder];
         }
-
-            
-        }
-    
-    }
-    
-  
-       // if (currentBid < bids[highestBidder]) {
-         //   secondHighestBidder = msg.sender;
-           // secondHighestBid = currentBid;
-            //highestBindingBid = min(currentBid + 1 ether, bids[highestBidder]);
-        //} else {
-          //  if (highestBidder != msg.sender) {
-            //    secondHighestBidder = highestBidder;
-              //  secondHighestBid = bids[highestBidder];
-            //}
-            //highestBindingBid = min(currentBid, bids[highestBidder] + 1 ether);
-            //highestBidder = msg.sender;
-        //}
-
-        //bids[msg.sender] = currentBid;
-       
-    //}
-
+}
+ }           
+ 
     function currentHigestBid() public  view returns (uint256) {
         return highestBindingBid;
 
     }
 
-    // function getSecondHighestBidder() public view returns (address, uint) {
-      //  return (secondHighestBidder, secondHighestBid);
-   // }
+   
 
 
    function setStartTime(uint time) private  OnlyOwner{
